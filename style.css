@@ -3,8 +3,15 @@ body{
 }
 main{
     background-color: #ac7342;
-    height: 100vh;
-    width: 100%;
+    width: 100%;   
+}
+h1{
+    margin: 0;
+}
+.footer{
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9a673a;
 }
 .display-flex{
     display: flex;
@@ -18,6 +25,13 @@ main{
 .header a{
     text-decoration: none;
     color: black;
+}
+.logotipe{
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.mode{
+    justify-content: center;
 }
 .techies-easy{
     position: relative;
