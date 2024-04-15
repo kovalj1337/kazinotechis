@@ -58,11 +58,5 @@
             </form>
         </div>
     </main>
-    <footer>
-        <div class="footer">
-            <img src="image/reklama.png" alt="" width="1280px" height="75px">
-        </div>
-    </footer>
 </body>
-
 </html>

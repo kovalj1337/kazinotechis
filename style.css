@@ -1,9 +1,10 @@
 body{
     margin: 0;
+    background-color: #ac7342;
+    height: 100vh;   
 }
 main{
-    background-color: #ac7342;
-    width: 100%;   
+    width: 100%;
 }
 h1{
     margin: 0;
@@ -33,44 +34,8 @@ h1{
 .mode{
     justify-content: center;
 }
-.techies-easy{
-    position: relative;
-    background-color: transparent;
-    border-radius: 50%;
-    border: none;
-    width: 300px;
-    height: 300px;
-    cursor: pointer;
-}
-.techies-easy::before{
-    content: "";
-    background: url("image/techies-easy.png") no-repeat center/cover;
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-}
-.techies-mid{
-    position: relative;
-    background-color: transparent;
-    border-radius: 50%;
-    border: none;
-    width: 300px;
-    height: 300px;
-    cursor: pointer;
-}
-.techies-mid::before{
-    content: "";
-    background: url("image/techies-normal.png") no-repeat center/cover;
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-}
+.techies-easy,
+.techies-mid,
 .techies-hard{
     position: relative;
     background-color: transparent;
@@ -79,14 +44,30 @@ h1{
     width: 300px;
     height: 300px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
+.techies-easy::before,
+.techies-mid::before,
 .techies-hard::before{
     content: "";
-    background: url("image/techies-hard.png") no-repeat center/cover;
     position: absolute;
     width: 300px;
     height: 300px;
     top: 0;
     left: 0;
     border-radius: 50%;
+}
+.techies-easy::before{
+    background: url("image/techies-easy.png") no-repeat center/cover;
+}
+.techies-mid::before{
+    background: url("image/techies-normal.png") no-repeat center/cover;
+}
+.techies-hard::before{
+    background: url("image/techies-hard.png") no-repeat center/cover;
+}
+.techies-easy:hover,
+.techies-mid:hover,
+.techies-hard:hover{
+    transform: scale(1.2);
 }
