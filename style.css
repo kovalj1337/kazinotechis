@@ -71,3 +71,67 @@ h1{
 .techies-hard:hover{
     transform: scale(1.2);
 }
+.justify-content-center{
+    justify-content: center;
+}
+.submit{
+    position: relative;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    width: 350px;
+    height: 175px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.submit::before{
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 175px;
+    top: 0;
+    left: 0;
+    background: url("image/submit.png") no-repeat center/cover;
+}
+.game{
+    justify-content: center;
+    column-gap: 44px;
+}
+.orel,
+.reshka{
+    margin: 0;
+    min-width: 300px;
+    min-height: 300px;
+}
+.orel input,
+.reshka input{
+    display: none;
+}
+.orel input + label,
+.reshka input + label{
+    position: relative;
+}
+.orel input + label::before,
+.orel input:checked + label::after,
+.reshka input + label::before,
+.reshka input:checked + label::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    display: inline-block;
+}
+.orel input + label::before{
+    background: url("image/orel.png");
+}
+.orel input:checked + label::after{
+    background: url("image/orel-comfirmed.png");
+}
+.reshka input + label::before{
+    background: url("image/reshka.png");
+}
+.reshka input:checked + label::after{
+    background: url("image/reshka-comfirmed.png");
+}
