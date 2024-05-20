@@ -82,10 +82,11 @@
                             echo ("Ви програли");
                             $_POST['attempts'] = ++$attempts;
                         } else {
-                            echo ("Кидаю ще раз");
                             $lol = rand(1, 2);
                             if ($game == $lol) {
-                                echo ("Ви виграли");
+                                echo ("<p class='display-flex justify-content-center'>
+                                <img src='image/win.png' alt='' width='300px' height='150px'>
+                                </p>");
                                 $_POST['attempts'] = ++$attempts;
                                 ++$wins;
                             } else {
