@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -40,20 +43,24 @@
             <form method="post" action="game.php">
                 <input type="hidden" name="winstreak" value="<?php echo ($winstreak); ?>">
                 <button type="submit" name="mode" value="easy" class="techies-easy"></button>
-                <button type="submit" name="mode" value="mid" class="techies-mid" <?php
+                <button type="submit" name="mode" value="mid" 
+                <?php
                 if ($winstreak >= 2) {
-                    echo "";
+                    echo "class='techies-mid' ";
                 } else {
-                    echo ("disabled");
+                    echo ("class='techies-mid-disabled' disabled");
                 }
-                ?>>Середній</button>
-                <button type="submit" name="mode" value="hard" class="techies-hard" <?php
+                ?>
+                >Середній</button>
+                <button type="submit" name="mode" value="hard" 
+                <?php
                 if ($winstreak >= 3) {
-                    echo "";
+                    echo "class='techies-hard' ";
                 } else {
-                    echo ("disabled");
+                    echo ("class='techies-hard-disabled' disabled");
                 }
-                ?>>Важкий</button>
+                ?>
+                >Важкий</button>
                 <input type="hidden" name="attempts" value="0">
             </form>
         </div>

@@ -36,7 +36,9 @@ h1{
 }
 .techies-easy,
 .techies-mid,
-.techies-hard{
+.techies-hard,
+.techies-mid-disabled,
+.techies-hard-disabled{
     position: relative;
     background-color: transparent;
     border-radius: 50%;
@@ -46,9 +48,15 @@ h1{
     cursor: pointer;
     transition: all 0.2s ease;
 }
+.techies-mid-disabled,
+.techies-hard-disabled{
+    cursor: default;
+}
 .techies-easy::before,
 .techies-mid::before,
-.techies-hard::before{
+.techies-hard::before,
+.techies-mid-disabled::before,
+.techies-hard-disabled::before{
     content: "";
     position: absolute;
     width: 300px;
@@ -65,6 +73,12 @@ h1{
 }
 .techies-hard::before{
     background: url("image/techies-hard.png") no-repeat center/cover;
+}
+.techies-mid-disabled::before{
+    background: url("image/techies-normal-disabled.png") no-repeat center/cover;
+}
+.techies-hard-disabled::before{
+    background: url("image/techies-hard-disabled.png") no-repeat center/cover;
 }
 .techies-easy:hover,
 .techies-mid:hover,
@@ -134,4 +148,58 @@ h1{
 }
 .reshka input:checked + label::after{
     background: url("image/reshka-comfirmed.png");
+}
+.font-win-and-try{
+    font-family: "Pacifico", cursive;
+    font-size: 26px;
+}
+.font-results{
+    font-family: "Pacifico", cursive;
+    font-size: 52px;
+}
+.font-for-level{
+    font-family: "Pacifico", cursive;
+    font-size: 26px;
+}
+.na-golovnu{
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    width: 420px;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.na-golovnu::before{
+    justify-content: center;
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    background: url("image/na-golovnu.png") no-repeat center/cover;
+}
+.restart{
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    width: 420px;
+    height: 120px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.restart::before{
+    justify-content: center;
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 120px;
+    top: 0;
+    left: 0;
+    background: url("image/restart.png") no-repeat center/cover;
 }

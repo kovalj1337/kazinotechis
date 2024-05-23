@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,51 +38,56 @@
         if (isset($_POST['game'])) {
             $game = $_POST["game"];
             $lol = rand(1, 2);
-            var_dump($_POST);
             if ($attempts <= 10) {
                 switch ($mode) {
                     case 'easy';
-                        echo ("<p>Ваших перемог" . "$wins" . "/" . "10</p>");
-                        echo ("<p>Спроба " . "$attempts" . "/" . "10</p>");
+                        echo ("<p class='display-flex justify-content-center font-win-and-try'>Ваших перемог" . "$wins" . "/" . "10</p>");
+                        echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
                         if ($game == $lol) {
-                            echo ("Ви виграли");
+                            echo ("<p class='display-flex justify-content-center'>
+                            <img src='image/win.png' alt='' width='300px' height='150px'>
+                            </p>");
                             $_POST['attempts'] = ++$attempts;
                             ++$wins;
                         } else {
-                            echo ("Ви програли кидаю ше раз");
                             $lol = rand(1, 2);
                             if ($game == $lol) {
-                                echo ("Ви виграли");
+                                echo ("<p class='display-flex justify-content-center'>
+                                <img src='image/win.png' alt='' width='300px' height='150px'>
+                                </p>");
                                 $_POST['attempts'] = ++$attempts;
                                 ++$wins;
                             } else {
-                                echo ("Ви програли");
+                                echo ("<p class='display-flex justify-content-center'>
+                                <img src='image/lose.png' alt='' width='300px' height='150px'>
+                                </p>");
                                 $_POST['attempts'] = ++$attempts;
                             }
                         }
                         break;
                     case "mid";
-                        echo ("<p>Ваших перемог" . "$wins" . "/" . "10</p>");
-                        echo ("<p>Спроба " . "$attempts" . "/" . "10</p>");
+                    echo ("<p class='display-flex justify-content-center font-win-and-try'>Ваших перемог" . "$wins" . "/" . "10</p>");
+                    echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
                         if ($game == $lol) {
-                            echo ("Ви виграли");
-                            if ($lol == 1) {
-                                echo ("Вам випав орел");
-                            } else {
-                                echo ("Вам випала решка");
-                            }
+                            echo ("<p class='display-flex justify-content-center'>
+                            <img src='image/win.png' alt='' width='300px' height='150px'>
+                            </p>");
                             $_POST['attempts'] = ++$attempts;
                             ++$wins;
                         } else {
                             $_POST['attempts'] = ++$attempts;
-                            echo ("Ви програли");
+                            echo ("<p class='display-flex justify-content-center'>
+                            <img src='image/lose.png' alt='' width='300px' height='150px'>
+                            </p>");
                         }
                         break;
                     case "hard";
-                        echo ("<p>Ваших перемог" . "$wins" . "/" . "10</p>");
-                        echo ("<p>Спроба " . "$attempts" . "/" . "10</p>");
+                    echo ("<p class='display-flex justify-content-center font-win-and-try'>Ваших перемог" . "$wins" . "/" . "10</p>");
+                    echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
                         if ($game != $lol) {
-                            echo ("Ви програли");
+                            echo ("<p class='display-flex justify-content-center'>
+                            <img src='image/lose.png' alt='' width='300px' height='150px'>
+                            </p>");
                             $_POST['attempts'] = ++$attempts;
                         } else {
                             $lol = rand(1, 2);
@@ -90,7 +98,9 @@
                                 $_POST['attempts'] = ++$attempts;
                                 ++$wins;
                             } else {
-                                echo ("Ви програли");
+                                echo ("<p class='display-flex justify-content-center'>
+                                <img src='image/lose.png' alt='' width='300px' height='150px'>
+                                </p>");
                                 $_POST['attempts'] = $attempts++;
                             }
                         }
