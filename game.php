@@ -42,7 +42,6 @@
                 switch ($mode) {
                     case 'easy';
                         echo ("<p class='display-flex justify-content-center font-win-and-try'>Ваших перемог" . "$wins" . "/" . "10</p>");
-                        echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
                         if ($game == $lol) {
                             echo ("<p class='display-flex justify-content-center'>
                             <img src='image/win.png' alt='' width='300px' height='150px'>
@@ -64,12 +63,12 @@
                                 $_POST['attempts'] = ++$attempts;
                             }
                         }
+                        echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
                         break;
                     case "mid";
                     echo ("<p class='display-flex justify-content-center font-win-and-try'>Ваших перемог" . "$wins" . "/" . "10</p>");
-                    echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
-                        if ($game == $lol) {
-                            echo ("<p class='display-flex justify-content-center'>
+                    if ($game == $lol) {
+                        echo ("<p class='display-flex justify-content-center'>
                             <img src='image/win.png' alt='' width='300px' height='150px'>
                             </p>");
                             $_POST['attempts'] = ++$attempts;
@@ -80,13 +79,13 @@
                             <img src='image/lose.png' alt='' width='300px' height='150px'>
                             </p>");
                         }
+                        echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
                         break;
                     case "hard";
                     echo ("<p class='display-flex justify-content-center font-win-and-try'>Ваших перемог" . "$wins" . "/" . "10</p>");
-                    echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
-                        if ($game != $lol) {
-                            echo ("<p class='display-flex justify-content-center'>
-                            <img src='image/lose.png' alt='' width='300px' height='150px'>
+                    if ($game != $lol) {
+                        echo ("<p class='display-flex justify-content-center'>
+                        <img src='image/lose.png' alt='' width='300px' height='150px'>
                             </p>");
                             $_POST['attempts'] = ++$attempts;
                         } else {
@@ -104,6 +103,7 @@
                                 $_POST['attempts'] = $attempts++;
                             }
                         }
+                        echo ("<p class='display-flex justify-content-center font-win-and-try'>Спроба " . "$attempts" . "/" . "10</p>");
                         break;
                 }
             } else {
@@ -143,7 +143,15 @@
             <input type="hidden" name="mode" value="<?php echo ($mode); ?>">
             <input type="hidden" name="wins" value="<?php echo ($wins); ?>">
             <input type="hidden" name="winstreak" value="<?php echo ($winstreak); ?>">
-            <p class="display-flex justify-content-center"><button type="submit" class="submit"></button></p>
+            <p class="display-flex justify-content-center"><button type="submit" class="
+            <?php 
+            if ($attempts == 10) {
+                echo ("results");
+            } else {
+                echo ("submit");
+            }
+            ?>
+            "></button></p>
         </form>
     </div>
 </body>

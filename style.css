@@ -107,6 +107,25 @@ h1{
     left: 0;
     background: url("image/submit.png") no-repeat center/cover;
 }
+.results{
+    position: relative;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    width: 400px;
+    height: 175px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.results::before{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 175px;
+    top: 0;
+    left: 0;
+    background: url("image/results.png") no-repeat center/cover;
+}
 .game{
     justify-content: center;
     column-gap: 44px;

@@ -51,7 +51,7 @@
                     echo ("class='techies-mid-disabled' disabled");
                 }
                 ?>
-                >Середній</button>
+                ></button>
                 <button type="submit" name="mode" value="hard" 
                 <?php
                 if ($winstreak >= 3) {
@@ -60,7 +60,7 @@
                     echo ("class='techies-hard-disabled' disabled");
                 }
                 ?>
-                >Важкий</button>
+                ></button>
                 <input type="hidden" name="attempts" value="0">
             </form>
         </div>

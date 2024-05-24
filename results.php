@@ -31,9 +31,9 @@
     </header>
     <h1 class='display-flex justify-content-center font-results'>Ви виграли <?php echo($wins)?> <?php 
     if($wins >= 2 && $wins <= 4){
-        echo("раза!");
+        echo("раза з\n" . $attempts . "!");
     }else{
-        echo("раз!");
+        echo("раз з\n" . $attempts . "!");
     }
     ?></h1>
     <h2><?php 
